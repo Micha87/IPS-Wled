@@ -3,7 +3,15 @@
         "de": {
             "Master Brightness": "Haupt Helligkeit",
             "Primary_Color": "Haupt Farbe",
-            "Nightlight active":"Nachtlicht aktiv"
+            "Nightlight active":"Nachtlicht aktiv",
+            "Nightlight Fade type":"Fade aktiv",
+            "Nightlight delay":"Nachtlicht Sleeptime",
+            "Nightlight target brightness":"Nachtlicht Ziel Helligkeit",
+            "Effect index": "Effekt",
+            "Effect speed":"Effekt Geschwindigkeit",
+            "Effect intensity": "Effekt stärke"
+
+
         }
     }
 }
