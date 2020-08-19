@@ -13,7 +13,7 @@
         //Variablen anlegen
 			$this->RegisterVariableInteger("Master_Brightness",$this->Translate("Master Brightness"), "~Intensity.255",11);
 			$this->EnableAction('Master_Brightness');
-			$this->RegisterVariableInteger("Primary_Color", "Primary Color", "~HexColor",12);
+			$this->RegisterVariableInteger("Primary_Color", $this->Translate("Primary Color"), "~HexColor",12);
 			$this->EnableAction('Primary_Color');
         	//$this->RegisterVariableInteger("Primary_Color_red", "Primary Color red", "");
         	//$this->RegisterVariableInteger("Primary_Color_green", "Primary Color green", "");
