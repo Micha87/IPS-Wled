@@ -2,7 +2,8 @@
     "translations": {
         "de": {
             "Master Brightness": "Haupt Helligkeit",
-            "Primary_Color": "Haupt Farbe"
+            "Primary_Color": "Haupt Farbe",
+            "Nightlight active":"Nachtlicht aktiv"
         }
     }
 }
