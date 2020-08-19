@@ -1,0 +1,16 @@
+{
+    "id": "{8B982B79-C768-6A3F-194A-DE31B35A88CF}",
+    "name": "WLed",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [
+        "{043EA491-0325-4ADD-8FC2-A30C8EEB4D3F}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}"
+    ],
+    "prefix": "WLED",
+    "url": ""
+}
