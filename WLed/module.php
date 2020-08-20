@@ -20,7 +20,7 @@
         	//$this->RegisterVariableInteger("Primary_Color_blue", "Primary Color blue", "");
 			$this->RegisterVariableBoolean("Nightlight_active",$this->Translate("Nightlight active"),'~Switch',20);
 			$this->EnableAction('Nightlight_active');	
-       		$this->RegisterVariableBoolean("Nightlight_Fade_type", $this->Translate("Nightlight Fade type"), "",22);
+       		$this->RegisterVariableBoolean("Nightlight_Fade_type", $this->Translate("Nightlight Fade type"), "~Switch",22);
 			$this->RegisterVariableInteger("Nightlight_delay", $this->Translate("Nightlight delay"), "",21);
 			$this->EnableAction('Nightlight_delay');	
 			$this->RegisterVariableInteger("Nightlight_target_brightness",$this->Translate("Nightlight target brightness"), "",23);
