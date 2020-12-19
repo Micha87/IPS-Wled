@@ -81,7 +81,8 @@
 				 if (fnmatch('*/c', $Buffer->Topic)) 		{
 						//$this->SendDebug('Receive Result: Color', $Buffer->Payload, 0);
 						$color=$Buffer->Payload;
-                    	SetValue($this->GetIDForIdent('Primary_Color'), hexdec(($color)));
+						$color_trimmed = trim($color, '#');
+                    				SetValue($this->GetIDForIdent('Primary_Color'), hexdec(($color_trimmed)));
 					}	   
 
 				 if (fnmatch('*/v', $Buffer->Topic)) 		{
