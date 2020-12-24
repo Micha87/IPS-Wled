@@ -7,7 +7,7 @@
 			parent::Create();
 
 			$this->ConnectParent('{C6D2AEB3-6E1F-4B2E-8E69-3A1A00246850}');
-
+			$this->createVariablenProfiles();
 			$this->RegisterPropertyString('Topic', "");
         
         //Variablen anlegen
@@ -216,4 +216,17 @@
         $resultServer = @$this->SendDataToParent($ServerJSON);
 
 	}
+	
+	private function createVariablenProfiles()
+    {
+        if (!IPS_VariableProfileExists('Wled.Effects')) {
+            IPS_CreateVariableProfile('Wled.Effects, 1);
+        }
+        IPS_SetVariableProfileDigits('Wled.Effects', 0);
+        IPS_SetVariableProfileText('Wled.Effects', '', '');
+	IPS_SetVariableProfileAssociation("Wled.Effects", 0, "Solid", "", "", -1);
+ 
+    }
+		
+		
 }
