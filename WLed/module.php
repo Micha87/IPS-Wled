@@ -220,9 +220,9 @@
 	private function createVariablenProfiles()
     {
         if (!IPS_VariableProfileExists('Wled.Effects')) {
-            IPS_CreateVariableProfile('Wled.Effects, 1);
+            IPS_CreateVariableProfile('Wled.Effects', 1);
         }
-        //IPS_SetVariableProfileDigits('Wled.Effects', 0);
+        IPS_SetVariableProfileDigits('Wled.Effects', 0);
         IPS_SetVariableProfileText('Wled.Effects', '', '');
 	IPS_SetVariableProfileAssociation("Wled.Effects", 0, "Solid", "", "", -1);
  
