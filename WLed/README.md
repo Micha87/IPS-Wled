@@ -12,7 +12,7 @@ Beschreibung des Moduls.
 7. [PHP-Befehlsreferenz](#7-php-befehlsreferenz)
 
 ### 1. Funktionsumfang
-
+Ansteuerung von WLED-Geräten per mqtt
 *
 
 ### 2. Vorraussetzungen
