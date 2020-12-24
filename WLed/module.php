@@ -224,7 +224,7 @@
         }
         IPS_SetVariableProfileDigits('Wled.Effects', 0);
         IPS_SetVariableProfileText('Wled.Effects', '', '');
-	IPS_SetVariableProfileAssociation("Wled.Effects", 0, "Solid", "", "", -1);
+	IPS_SetVariableProfileAssociation('Wled.Effects', 0, "Solid", "", -1);
  
     }
 		
