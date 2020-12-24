@@ -32,6 +32,7 @@
 			$this->RegisterVariableInteger("Effect_intensity", $this->Translate("Effect intensity"), "~Intensity.255",32);
 			$this->EnableAction('Effect_intensity');
         		$this->RegisterVariableInteger("FastLED_palette", "FastLED palette", "Wled.FastLED_palette",50);
+			$this->EnableAction('FastLED_palette');
         		$this->RegisterVariableBoolean("RGB_HSB", "RGB_HSB UI mode","",51);
 			$this->RegisterVariableString("Server_description", "Server description","",52);
 			$this->RegisterVariableBoolean('Wled_State', 'State', '~Switch',10);
@@ -168,6 +169,12 @@
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&NL='."$msg");
 			SetValue($this->GetIDForIdent('Nightlight_delay'),$value);
 		}
+		private function FastLED_palette(int $value)
+		{			
+			$msg = strval($value);
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&FP='."$msg");
+			SetValue($this->GetIDForIdent('FastLED_palette'),$value);
+		}
 
 
 		
@@ -198,6 +205,9 @@
 				case 'Nightlight_delay':
 					$this->Nightlight_delay($Value);
 					break;
+				case 'FastLED_palette':
+					$this->FastLED_palette($Value);
+					break;	
 				}
 		}
 		protected function sendMQTT($Topic, $Payload)
