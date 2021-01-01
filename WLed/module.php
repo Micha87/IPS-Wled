@@ -133,7 +133,7 @@
 
 		}	
 		
-		public function RGB2Hex($R,$G,$B){
+		public function RGB2Hex(int $R,int $G,int $B){
  
  			 $R=dechex($R);
 			 If (strlen($R)<2)
