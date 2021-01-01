@@ -128,7 +128,7 @@
 						$G= $daten->cs[1];
 						$B= $daten->cs[2];
 					 
-					 	$R=dechex($R);
+					 	/*$R=dechex($R);
 						If (strlen($R)<2)
 			 			$R='0'.$R;
 
@@ -140,10 +140,14 @@
 						If (strlen($B)<2)
 						$B='0'.$B;
  
-					 	$color_Sec=$R.$G.$B;
+					 	$color_Sec=$R.$G.$B;*/
 					 	
 					 	//$color_Sec_trimmed = trim($Col_Sec, '#');
-                    				SetValue($this->GetIDForIdent('Secondary_Color'), hexdec(($color_Sec)));
+					 
+					 	
+					 
+                    				SetValue($this->GetIDForIdent('Secondary_Color'), hexdec((RGBtoHex($R, $G, $B))));
+					 
 					 
 					}	   
 
@@ -285,7 +289,11 @@
 
 	}
 	
-	/*private function RGBtoHex($R, $G, $B){
+	/*protected function rgbToHex($r, $g, $b)
+	    {
+		return ($r << 16) + ($g << 8) + $b;
+	    }*/
+	protected function RGBtoHex($R, $G, $B){
  
  			 $R=dechex($R);
 			 If (strlen($R)<2)
@@ -299,8 +307,8 @@
 			 If (strlen($B)<2)
 			 $B='0'.$B;
  
- 			 return '#' . $R . $G . $B;
-			}	*/
+ 			 return $R . $G . $B;
+			}	
 		
 		
 	private function createVariablenProfiles()
