@@ -19,7 +19,7 @@
 			$this->EnableAction('Secondary_Color');
 			$this->RegisterVariableInteger("Third_Color", $this->Translate("Third Color"), "~HexColor",12);
 			$this->EnableAction('Third_Color');
-			$this->RegisterVariableBoolean("Swap_Color", $this->Translate("Swap_Color"), "~Switch",12);//Swap primary and secondary color
+			$this->RegisterVariableBoolean("Swap_Color", $this->Translate("Swap_Color"), "",12);//Swap primary and secondary color
 			$this->EnableAction('Swap_Color');
         	//$this->RegisterVariableInteger("Primary_Color_red", "Primary Color red", "");
         	//$this->RegisterVariableInteger("Primary_Color_green", "Primary Color green", "");
