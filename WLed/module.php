@@ -64,23 +64,6 @@
 		
 		}
 
-		public function RGBtoHex($R, $G, $B){
- 
- 			 $R=dechex($R);
-			 If (strlen($R)<2)
-			 $R='0'.$R;
-
-			  $G=dechex($G);
-			 If (strlen($G)<2)
-			 $G='0'.$G;
-
-			 $B=dechex($B);
-			 If (strlen($B)<2)
-			 $B='0'.$B;
- 
- 			 return '#' . $R . $G . $B;
-			}	
-		
 		
 		public function ReceiveData($JSONString)
     	{
@@ -139,7 +122,7 @@
 						}
 						
 					 
-					 	$Col_Sec=RGBtoHex(($daten->cs[0]),($daten->cs[1]),($daten->cs[2]));
+					 	$Col_Sec=RGB2Hex(($daten->cs[0]),($daten->cs[1]),($daten->cs[2]));
 					 	$color_Sec_trimmed = trim($Col_Sec, '#');
                     				SetValue($this->GetIDForIdent('Secondary_Color'), hexdec(($color_Sec_trimmed)));
 					 
@@ -149,7 +132,25 @@
 			}
 
 		}	
+		
+		private function RGB2Hex($R, $G, $B){
+ 
+ 			 $R=dechex($R);
+			 If (strlen($R)<2)
+			 $R='0'.$R;
 
+			  $G=dechex($G);
+			 If (strlen($G)<2)
+			 $G='0'.$G;
+
+			 $B=dechex($B);
+			 If (strlen($B)<2)
+			 $B='0'.$B;
+ 
+ 			 return '#' . $R . $G . $B;
+			}	
+		
+		
 		private function setBrightness(int $value)
 		{			
 			$msg = strval($value);
