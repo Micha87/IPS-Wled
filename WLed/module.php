@@ -265,7 +265,7 @@
 
 	}
 	
-	private function RGBtoHex($R, $G, $B){
+	/*private function RGBtoHex($R, $G, $B){
  
  			 $R=dechex($R);
 			 If (strlen($R)<2)
@@ -280,7 +280,7 @@
 			 $B='0'.$B;
  
  			 return '#' . $R . $G . $B;
-			}	
+			}	*/
 		
 		
 	private function createVariablenProfiles()
