@@ -121,10 +121,27 @@
 							SetValue($this->GetIDForIdent('RGB_HSB'),false);
 						}
 						
+					 //secondary color
+					 	$R=int $daten->cs[0];
+						$G=int $daten->cs[1];
+						$B=int $daten->cs[2];
 					 
-					 	$Col_Sec=RGB2Hex(255,0,255);
-					 	$color_Sec_trimmed = trim($Col_Sec, '#');
-                    				SetValue($this->GetIDForIdent('Secondary_Color'), hexdec(($color_Sec_trimmed)));
+					 	$R=dechex($R);
+						If (strlen($R)<2)
+			 			$R='0'.$R;
+
+						$G=dechex($G);
+						If (strlen($G)<2)
+						$G='0'.$G;
+
+						$B=dechex($B);
+						If (strlen($B)<2)
+						$B='0'.$B;
+ 
+					 	$color_Sec=$R.$G.$B
+					 	
+					 	//$color_Sec_trimmed = trim($Col_Sec, '#');
+                    				SetValue($this->GetIDForIdent('Secondary_Color'), hexdec(($color_Sec)));
 					 
 					}	   
 
