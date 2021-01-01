@@ -161,7 +161,7 @@
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&T='."$msg");
-			SetValue($this->GetIDForIdent('Wled_State'),$value);
+			//SetValue($this->GetIDForIdent('Wled_State'),$value);
 		}
 
 		private function SetColor(int $value)
@@ -195,19 +195,19 @@
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&ND');
-			SetValue($this->GetIDForIdent('Nightlight_active'),$value);
+			//SetValue($this->GetIDForIdent('Nightlight_active'),$value);
 		}
 		private function Nightlight_delay(int $value)
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&NL='."$msg");
-			SetValue($this->GetIDForIdent('Nightlight_delay'),$value);
+			//SetValue($this->GetIDForIdent('Nightlight_delay'),$value);
 		}
 		private function FastLED_palette(int $value)
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&FP='."$msg");
-			SetValue($this->GetIDForIdent('FastLED_palette'),$value);
+			//SetValue($this->GetIDForIdent('FastLED_palette'),$value);
 		}
 
 
