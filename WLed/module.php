@@ -168,7 +168,13 @@
 		{
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/col',"$msg");
-			SetValue($this->GetIDForIdent('Primary_Color'),$value);
+			//SetValue($this->GetIDForIdent('Primary_Color'),$value);
+		}
+		private function SetColorSec(int $value)
+		{
+			$msg = strval($value);
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&C2='."$msg");
+			//SetValue($this->GetIDForIdent('Primary_Color'),$value);
 		}
 		private function Effect_speed(int $value)
 		{			
@@ -236,6 +242,10 @@
 				case 'FastLED_palette':
 					$this->FastLED_palette($Value);
 					break;	
+				case 'Secondary_Color':
+					$this->SetColorSec($Value);
+					break;		
+					
 				}
 		}
 		protected function sendMQTT($Topic, $Payload)
