@@ -17,8 +17,10 @@
 			$this->EnableAction('Primary_Color');
 			$this->RegisterVariableInteger("Secondary_Color", $this->Translate("Secondary color"), "~HexColor",12);
 			$this->EnableAction('Secondary_Color');
-			//$this->RegisterVariableInteger("Third_Color", $this->Translate("Third Color"), "~HexColor",12);
-			//$this->EnableAction('Third_Color');
+			$this->RegisterVariableInteger("Third_Color", $this->Translate("Third Color"), "~HexColor",12);
+			$this->EnableAction('Third_Color');
+			$this->RegisterVariableInteger("Swap_Color_Primary-Secondary", $this->Translate("Third Color"), "~Switch",12);//Swap primary and secondary color
+			$this->EnableAction('Swap_Color_Primary-Secondary');
         	//$this->RegisterVariableInteger("Primary_Color_red", "Primary Color red", "");
         	//$this->RegisterVariableInteger("Primary_Color_green", "Primary Color green", "");
         	//$this->RegisterVariableInteger("Primary_Color_blue", "Primary Color blue", "");
@@ -176,6 +178,18 @@
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&C2='."$msg");
 			//SetValue($this->GetIDForIdent('Primary_Color'),$value);
 		}
+		private function SetColorThird(int $value)
+		{
+			$msg = strval($value);
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&C3='."$msg");
+			SetValue($this->GetIDForIdent('Third_Color'),$value);
+		
+		private function SwapColor_Prim_Sec()
+		{
+			
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&SC');
+			
+		
 		private function Effect_speed(int $value)
 		{			
 			$msg = strval($value);
@@ -245,9 +259,15 @@
 				case 'Secondary_Color':
 					$this->SetColorSec($Value);
 					break;		
-					
+				case 'Third_Color':
+					$this->SetColorSec($Value);
+					break;	
+				case 'Swap':
+					$this->SwapColor_Prim_Sec();
+					break;	
 				}
 		}
+			
 		protected function sendMQTT($Topic, $Payload)
     {
         $resultServer = true;
