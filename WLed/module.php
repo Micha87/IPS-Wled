@@ -122,9 +122,9 @@
 						}
 						
 					 //secondary color
-					 	$R=int $daten->cs[0];
-						$G=int $daten->cs[1];
-						$B=int $daten->cs[2];
+					 	$R= $daten->cs[0];
+						$G= $daten->cs[1];
+						$B= $daten->cs[2];
 					 
 					 	$R=dechex($R);
 						If (strlen($R)<2)
