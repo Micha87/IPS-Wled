@@ -15,6 +15,10 @@
 			$this->EnableAction('Master_Brightness');
 			$this->RegisterVariableInteger("Primary_Color", $this->Translate("Primary Color"), "~HexColor",12);
 			$this->EnableAction('Primary_Color');
+			$this->RegisterVariableInteger("Secondary_Color", $this->Translate("Secondary color"), "~HexColor",12);
+			$this->EnableAction('Secondary_Color');
+			//$this->RegisterVariableInteger("Third_Color", $this->Translate("Third Color"), "~HexColor",12);
+			//$this->EnableAction('Third_Color');
         	//$this->RegisterVariableInteger("Primary_Color_red", "Primary Color red", "");
         	//$this->RegisterVariableInteger("Primary_Color_green", "Primary Color green", "");
         	//$this->RegisterVariableInteger("Primary_Color_blue", "Primary Color blue", "");
@@ -54,7 +58,7 @@
 			
 			
 			$MQTTTopic = $this->ReadPropertyString('Topic');
-        	$this->SetReceiveDataFilter('.*' . $MQTTTopic . '.*');
+        		$this->SetReceiveDataFilter('.*' . $MQTTTopic . '.*');
 		#		Status holen
 				//if($this->HasActiveParent())$this->Status();
 		
@@ -98,7 +102,7 @@
 						SetValue($this->GetIDForIdent('Effect_intensity'),intval($daten->ix));
 						SetValue($this->GetIDForIdent('FastLED_palette'),intval($daten->fp));											
 						SetValue($this->GetIDForIdent('Server_description'),"$daten->ds");
-
+						
 						if ($daten->nl == "1") {
 							SetValue($this->GetIDForIdent('Nightlight_active'), true);
 						} else {
@@ -116,7 +120,12 @@
 						} else {
 							SetValue($this->GetIDForIdent('RGB_HSB'),false);
 						}
-					
+						
+					 
+					 	$Col_Sec=RGBtoHex(($daten->cs[0])($daten->cs[1])($daten->cs[2]));
+					 	$color_Sec_trimmed = trim($Col_Sec, '#');
+                    				SetValue($this->GetIDForIdent('Secondary_Color'), hexdec(($color_Sec_trimmed)));
+					 
 					}	   
 
            		}
@@ -227,6 +236,24 @@
 
 	}
 	
+	private function RGBtoHex($R, $G, $B){
+ 
+ 			 $R=dechex($R);
+			 If (strlen($R)<2)
+			 $R='0'.$R;
+
+			  $G=dechex($G);
+			 If (strlen($G)<2)
+			 $G='0'.$G;
+
+			 $B=dechex($B);
+			 If (strlen($B)<2)
+			 $B='0'.$B;
+ 
+ 			 return '#' . $R . $G . $B;
+			}	
+		
+		
 	private function createVariablenProfiles()
     {
         if (!IPS_VariableProfileExists('Wled.Effects')) {
