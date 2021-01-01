@@ -188,7 +188,7 @@
 		{
 			
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&SC');
-			
+		}	
 		
 		private function Effect_speed(int $value)
 		{			
