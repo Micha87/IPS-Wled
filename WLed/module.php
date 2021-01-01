@@ -133,7 +133,7 @@
 
 		}	
 		
-		private function RGB2Hex($R, $G, $B){
+		punlic function RGB2Hex($R,$G,$B){
  
  			 $R=dechex($R);
 			 If (strlen($R)<2)
