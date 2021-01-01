@@ -122,7 +122,7 @@
 						}
 						
 					 
-					 	$Col_Sec=RGBtoHex(($daten->cs[0])($daten->cs[1])($daten->cs[2]));
+					 	$Col_Sec=RGBtoHex(($daten->cs[0]),($daten->cs[1]),($daten->cs[2]));
 					 	$color_Sec_trimmed = trim($Col_Sec, '#');
                     				SetValue($this->GetIDForIdent('Secondary_Color'), hexdec(($color_Sec_trimmed)));
 					 
