@@ -183,7 +183,7 @@
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&C3='."$msg");
 			SetValue($this->GetIDForIdent('Third_Color'),$value);
-		
+		}
 		private function SwapColor_Prim_Sec()
 		{
 			
