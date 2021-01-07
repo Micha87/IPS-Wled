@@ -489,6 +489,5 @@
 	IPS_SetVariableProfileAssociation('Wled.FastLED_palette',49,"Sakura", "", -1);
 	IPS_SetVariableProfileAssociation('Wled.FastLED_palette',50,"Aurora", "", -1);
 	
-    }
-			
+    }			
 }
