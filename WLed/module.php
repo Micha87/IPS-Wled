@@ -26,7 +26,7 @@
         	//$this->RegisterVariableInteger("Primary_Color_blue", "Primary Color blue", "");
 			$this->RegisterVariableBoolean("Nightlight_active",$this->Translate("Nightlight active"),'~Switch',20);
 			$this->EnableAction('Nightlight_active');	
-       			$this->RegisterVariableBoolean("Nightlight_Fade_type", $this->Translate("Nightlight Fade type"), "~Switch",22);
+       		$this->RegisterVariableBoolean("Nightlight_Fade_type", $this->Translate("Nightlight Fade type"), "~Switch",22);
 			$this->RegisterVariableInteger("Nightlight_delay", $this->Translate("Nightlight delay"), "",21);
 			$this->EnableAction('Nightlight_delay');	
 			$this->RegisterVariableInteger("Nightlight_target_brightness",$this->Translate("Nightlight target brightness"), "",23);
@@ -37,12 +37,15 @@
 			$this->EnableAction('Effect_speed');
 			$this->RegisterVariableInteger("Effect_intensity", $this->Translate("Effect intensity"), "~Intensity.255",32);
 			$this->EnableAction('Effect_intensity');
-        		$this->RegisterVariableInteger("FastLED_palette", "FastLED palette", "Wled.FastLED_palette",50);
+        	$this->RegisterVariableInteger("FastLED_palette", "FastLED palette", "Wled.FastLED_palette",50);
 			$this->EnableAction('FastLED_palette');
-        		$this->RegisterVariableBoolean("RGB_HSB", "RGB_HSB UI mode","",51);
+        	$this->RegisterVariableBoolean("RGB_HSB", "RGB_HSB UI mode","",51);
 			$this->RegisterVariableString("Server_description", "Server description","",52);
 			$this->RegisterVariableBoolean('Wled_State', 'State', '~Switch',10);
 			$this->EnableAction('Wled_State');
+			$this->RegisterVariableInteger("entire_Preset", $this->Translate("Preset aktivieren"), "",53);
+			$this->EnableAction('entire_Preset');
+
 		}
 
 		public function Destroy()
@@ -227,7 +230,11 @@
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&FP='."$msg");
 			//SetValue($this->GetIDForIdent('FastLED_palette'),$value);
 		}
-
+		private function entirePreset(int $value)
+		{			
+			$msg = strval($value);
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PL='."$msg");
+		}
 
 		
 		public function RequestAction($Ident, $Value)
@@ -268,7 +275,10 @@
 					break;	
 				case 'Swap_Color':
 					$this->SwapColor();
-					break;	
+					break;
+				case 'entire_Preset':
+					$this->entirePreset();
+					break;		
 				}
 		}
 			
