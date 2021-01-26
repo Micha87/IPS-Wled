@@ -160,7 +160,6 @@
 		}	
 		
 		
-		
 		private function setBrightness(int $value)
 		{			
 			$msg = strval($value);
