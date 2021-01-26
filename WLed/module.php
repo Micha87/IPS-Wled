@@ -233,6 +233,7 @@
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PL='."$msg");
+			SetValue($this->GetIDForIdent('Entire_Preset'),$value);
 		}
 		
 
