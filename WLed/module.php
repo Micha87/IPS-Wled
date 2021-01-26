@@ -43,7 +43,7 @@
 			$this->RegisterVariableString("Server_description", "Server description","",52);
 			$this->RegisterVariableBoolean('Wled_State', 'State', '~Switch',10);
 			$this->EnableAction('Wled_State');
-			$this->RegisterVariableInteger("Entire_Preset", $this->Translate("Preset aktivieren"), "",53);
+			//$this->RegisterVariableInteger("Entire_Preset", $this->Translate("Preset aktivieren"), "",53);
 			//$this->EnableAction('Entire_Preset');
 
 		}
@@ -229,11 +229,7 @@
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&FP='."$msg");
 			//SetValue($this->GetIDForIdent('FastLED_palette'),$value);
 		}
-		private function entire_Preset(int $value)
-		{			
-			$msg = strval($value);
-			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PL='."$msg");
-		}
+		
 
 		
 		public function RequestAction($Ident, $Value)
@@ -274,10 +270,7 @@
 					break;	
 				case 'Swap_Color':
 					$this->SwapColor();
-					break;
-				case 'Entire_Preset':
-					$this->entire_Preset();
-					break;		
+					break;	
 				}
 		}
 			
