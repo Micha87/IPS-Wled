@@ -43,8 +43,8 @@
 			$this->RegisterVariableString("Server_description", "Server description","",52);
 			$this->RegisterVariableBoolean('Wled_State', 'State', '~Switch',10);
 			$this->EnableAction('Wled_State');
-			$this->RegisterVariableInteger("entire_Preset", $this->Translate("Preset aktivieren"), "~Intensity.255",53);
-			$this->EnableAction('entire_Preset');
+			$this->RegisterVariableInteger("Entire_Preset", $this->Translate("Preset aktivieren"), "",53);
+			$this->EnableAction('Entire_Preset');
 
 		}
 
@@ -275,7 +275,7 @@
 				case 'Swap_Color':
 					$this->SwapColor();
 					break;
-				case 'entire_Preset':
+				case 'Entire_Preset':
 					$this->entire_Preset();
 					break;		
 				}
