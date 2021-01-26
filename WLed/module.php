@@ -237,7 +237,7 @@
 			SetValue($this->GetIDForIdent('Entire_Preset'),$value);
 		}
 		
-		private function Entire_Preset(int $value)
+		private function save_Preset(int $value)
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PS='."$msg");
