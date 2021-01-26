@@ -9,8 +9,8 @@
             "Nightlight target brightness":"Nachtlicht Ziel Helligkeit",
             "Effect index": "Effekt",
             "Effect speed":"Effekt Geschwindigkeit",
-            "Effect intensity": "Effekt stärke"
-
+            "Effect intensity": "Effekt stärke",
+            "State":"Status"
 
         }
     }
