@@ -229,7 +229,7 @@
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&FP='."$msg");
 			//SetValue($this->GetIDForIdent('FastLED_palette'),$value);
 		}
-		private function Nightlight_delay(int $value)
+		private function Entire_Preset(int $value)
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PL='."$msg");
