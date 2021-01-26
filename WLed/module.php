@@ -43,9 +43,10 @@
 			$this->RegisterVariableString("Server_description", "Server description","",52);
 			$this->RegisterVariableBoolean('Wled_State',$this->Translate('State'), '~Switch',10);
 			$this->EnableAction('Wled_State');
-			$this->RegisterVariableInteger("Entire_Preset", $this->Translate("Preset aktivieren"), "Wled.Preset",53);
+			$this->RegisterVariableInteger("Entire_Preset", $this->Translate("Entire_Preset"), "Wled.Preset",53);
 			$this->EnableAction('Entire_Preset');
-
+			$this->RegisterVariableInteger("save_Preset", $this->Translate("save_Preset"), "Wled.Preset",54);
+			$this->EnableAction('save_Preset');
 		}
 
 		public function Destroy()
@@ -236,7 +237,12 @@
 			SetValue($this->GetIDForIdent('Entire_Preset'),$value);
 		}
 		
-
+		private function Entire_Preset(int $value)
+		{			
+			$msg = strval($value);
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PS='."$msg");
+			SetValue($this->GetIDForIdent('save_Preset'),$value);
+		}
 		
 		public function RequestAction($Ident, $Value)
 		{
@@ -279,7 +285,10 @@
 					break;
 				case 'Entire_Preset':
 					$this->Entire_Preset($Value);
-					break;		
+					break;
+				case 'save_Preset':
+					$this->save_Preset($Value);
+					break;			
 				}
 		}
 			
@@ -504,7 +513,7 @@
 			IPS_CreateVariableProfile('Wled.Preset', 1);
 		}
 			
-		IPS_SetVariableProfileValues('Wled.Preset', 0, 14, 1);
+		IPS_SetVariableProfileValues('Wled.Preset', 0, 16, 1);
 
 
     }			

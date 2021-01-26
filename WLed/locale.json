@@ -10,7 +10,9 @@
             "Effect index": "Effekt",
             "Effect speed":"Effekt Geschwindigkeit",
             "Effect intensity": "Effekt stärke",
-            "State":"Status"
+            "State":"Status",
+            "Entire_Preset":"Preset aktivieren",
+            "save_Preset":"Preset speichern"
 
         }
     }
