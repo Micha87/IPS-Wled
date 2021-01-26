@@ -44,7 +44,7 @@
 			$this->RegisterVariableBoolean('Wled_State', 'State', '~Switch',10);
 			$this->EnableAction('Wled_State');
 			$this->RegisterVariableInteger("Entire_Preset", $this->Translate("Preset aktivieren"), "",53);
-			//$this->EnableAction('Entire_Preset');
+			$this->EnableAction('Entire_Preset');
 
 		}
 
