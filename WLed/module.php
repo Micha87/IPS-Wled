@@ -275,7 +275,11 @@
 					break;	
 				case 'Swap_Color':
 					$this->SwapColor();
+					break;
+				case 'Entire_Preset':
+					$this->Entire_Preset();
 					break;	
+					
 				}
 		}
 			
