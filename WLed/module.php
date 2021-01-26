@@ -45,8 +45,8 @@
 			$this->EnableAction('Wled_State');
 			$this->RegisterVariableInteger("Entire_Preset", $this->Translate("Entire_Preset"), "Wled.Preset",53);
 			$this->EnableAction('Entire_Preset');
-			$this->RegisterVariableInteger("save_Preset", $this->Translate("save_Preset"), "Wled.Preset",54);
-			$this->EnableAction('save_Preset');
+			$this->RegisterVariableInteger("Save_Preset", $this->Translate("Save_Preset"), "Wled.Preset",54);
+			$this->EnableAction('Save_Preset');
 		}
 
 		public function Destroy()
@@ -237,7 +237,7 @@
 			SetValue($this->GetIDForIdent('Entire_Preset'),$value);
 		}
 		
-		private function save_Preset(int $value)
+		private function Save_Preset(int $value)
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PS='."$msg");
@@ -286,7 +286,7 @@
 				case 'Entire_Preset':
 					$this->Entire_Preset($Value);
 					break;
-				case 'save_Preset':
+				case 'Save_Preset':
 					$this->save_Preset($Value);
 					break;			
 				}
