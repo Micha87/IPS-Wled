@@ -229,7 +229,7 @@
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&FP='."$msg");
 			//SetValue($this->GetIDForIdent('FastLED_palette'),$value);
 		}
-		private function entirePreset(int $value)
+		private function entire_Preset(int $value)
 		{			
 			$msg = strval($value);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PL='."$msg");
@@ -276,7 +276,7 @@
 					$this->SwapColor();
 					break;
 				case 'entire_Preset':
-					$this->entirePreset();
+					$this->entire_Preset();
 					break;		
 				}
 		}
