@@ -277,9 +277,8 @@
 					$this->SwapColor();
 					break;
 				case 'Entire_Preset':
-					$this->Entire_Preset();
-					break;	
-					
+					$this->Entire_Preset($Value);
+					break;		
 				}
 		}
 			
