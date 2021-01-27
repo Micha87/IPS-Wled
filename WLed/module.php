@@ -244,11 +244,11 @@
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api', '&PS='."$msg");
 			SetValue($this->GetIDForIdent('save_Preset'),$value);
 		}
-		public function sendValue(string $value2,string $value)
+		public function sendValue(string $topic,string $payload)
 		{			
-			$msg = strval($value);
-			$msg2 = strval($value2);
-			$this->sendMQTT($this->ReadPropertyString('Topic').'/api'."$msg2","$msg");
+			$msg = strval($payload);
+			$msg2 = strval($topic);
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/'."$msg2","$msg");
 		}
 		
 		public function RequestAction($Ident, $Value)
