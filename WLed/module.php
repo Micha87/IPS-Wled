@@ -254,8 +254,6 @@
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/api',"&RB");
 		}
 
-
-
 		public function RequestAction($Ident, $Value)
 		{
 			switch ($Ident) {
