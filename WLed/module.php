@@ -250,7 +250,10 @@
 			$msg2 = strval($topic);
 			$this->sendMQTT($this->ReadPropertyString('Topic').'/'."$msg2","$msg");
 		}
-		
+		public function reboot()
+		{			
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/api',"&RB");
+		}
 		public function RequestAction($Ident, $Value)
 		{
 			switch ($Ident) {
@@ -294,7 +297,7 @@
 					$this->Entire_Preset($Value);
 					break;
 				case 'Save_Preset':
-					$this->save_Preset($Value);
+					$this->Save_Preset($Value);
 					break;			
 				}
 		}
