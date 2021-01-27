@@ -248,7 +248,7 @@
 		{			
 			$msg = strval($value);
 			$msg2 = strval($value2);
-			$this->sendMQTT($this->ReadPropertyString('Topic').'/'."$msg2","$msg");
+			$this->sendMQTT($this->ReadPropertyString('Topic').'/api'."$msg2","$msg");
 		}
 		
 		public function RequestAction($Ident, $Value)
