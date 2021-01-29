@@ -1,8 +1,13 @@
 {
     "elements":
     [
-		{ "name": "Topic", "type": "ValidationTextBox", "caption": "Topic:" }
-	],
+        { "name": "Topic", "type": "ValidationTextBox", "caption": "Topic:" }
+        
+    ],
+    "actions":
+    [
+        { "type": "Button", "caption": "Reboot", "onClick": "WLED_reboot($id);", "confirm": "reboot ?" }
+    ],
     "status":
     [
 	    { "code": 215,"icon": "error","caption": "Device unreachable"}
