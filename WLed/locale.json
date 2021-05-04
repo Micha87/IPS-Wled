@@ -1,8 +1,8 @@
 {
     "translations": {
         "de": {
-            "Master Brightness": "Haupt Helligkeit",
-            "Primary_Color": "Haupt Farbe",
+            "Master Brightness": "Primär Helligkeit",
+            "Primary_Color": "Primär Farbe",
             "Nightlight active":"Nachtlicht aktiv",
             "Nightlight Fade type":"Fade aktiv",
             "Nightlight delay":"Nachtlicht Sleeptime",
