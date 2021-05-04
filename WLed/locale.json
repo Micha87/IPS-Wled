@@ -2,7 +2,10 @@
     "translations": {
         "de": {
             "Master Brightness": "Primär Helligkeit",
-            "Primary_Color": "Primär Farbe",
+            "Primary Color": "Primär Farbe",
+            "Secondary Color": "Sekundär Farbe",
+            "Third Color": "3.Farbe",
+            "Swap_Color": "Tausch Farbe",
             "Nightlight active":"Nachtlicht aktiv",
             "Nightlight Fade type":"Fade aktiv",
             "Nightlight delay":"Nachtlicht Sleeptime",
@@ -13,7 +16,6 @@
             "State":"Status",
             "Entire_Preset":"Preset aktivieren",
             "Save_Preset":"Preset speichern"
-
         }
     }
 }
