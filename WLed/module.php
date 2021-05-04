@@ -13,13 +13,13 @@
         //Variablen anlegen
 			$this->RegisterVariableInteger("Master_Brightness",$this->Translate("Master Brightness"), "~Intensity.255",11);
 			$this->EnableAction('Master_Brightness');
-			$this->RegisterVariableInteger("Primary_Color", $this->Translate("Primary Color"), "~HexColor",12);
+			$this->RegisterVariableInteger("Primary_Color", $this->Translate("Primary Color"), "~HexColor",13);
 			$this->EnableAction('Primary_Color');
-			$this->RegisterVariableInteger("Secondary_Color", $this->Translate("Secondary Color"), "~HexColor",12);
+			$this->RegisterVariableInteger("Secondary_Color", $this->Translate("Secondary Color"), "~HexColor",14);
 			$this->EnableAction('Secondary_Color');
-			$this->RegisterVariableInteger("Third_Color", $this->Translate("Third Color"), "~HexColor",12);
+			$this->RegisterVariableInteger("Third_Color", $this->Translate("Third Color"), "~HexColor",15);
 			$this->EnableAction('Third_Color');
-			$this->RegisterVariableBoolean("Swap_Color", $this->Translate("Swap_Color"), "",12);//Swap primary and secondary color
+			$this->RegisterVariableBoolean("Swap_Color", $this->Translate("Swap_Color"), "",16);//Swap primary and secondary color
 			$this->EnableAction('Swap_Color');
         	//$this->RegisterVariableInteger("Primary_Color_red", "Primary Color red", "");
         	//$this->RegisterVariableInteger("Primary_Color_green", "Primary Color green", "");
